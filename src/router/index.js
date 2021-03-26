@@ -1,29 +1,43 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+
+import Main from "../views/layout/Main";
+
+import MatchFixture from "../views/MatchFixture";
+import MatchDetail from "../components/match/MatchDetail";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home,
-  },
-  {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    name: "main",
+    component: Main,
+    redirect: "/match",
+    children: [
+      {
+        path: "/match",
+        component: MatchFixture,
+        name: "match-fixture",
+        meta: {
+          level: 0,
+        },
+      },
+      {
+        path: "/match/:matchId",
+        component: MatchDetail,
+        name: "match-detail",
+        meta: {
+          level: 1,
+        },
+      },
+    ],
   },
 ];
 
 const router = new VueRouter({
   mode: "history",
-  base: process.env.BASE_URL,
+  // base: process.env.BASE_URL,
   routes,
 });
 
