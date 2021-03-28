@@ -2,7 +2,9 @@
   <a href="https://vuejs.org" target="_blank">
     <img alt="Vuetify Logo" width="100" src="https://cli.vuejs.org/favicon.png">
   </a>
-  Made with Vue
+</p>
+<p align="center">
+    Made with Vue
 </p>
 
 # livescore-vue
