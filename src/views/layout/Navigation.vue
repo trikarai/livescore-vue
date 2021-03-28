@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <v-app-bar app class="elevation-2">
+    <v-app-bar app class="elevation-2" color="primary">
       <v-app-bar-nav-icon @click="drawer = !drawer"> </v-app-bar-nav-icon>
       <v-toolbar-title> elevenscore</v-toolbar-title>
       <v-spacer></v-spacer>

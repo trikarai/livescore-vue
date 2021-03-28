@@ -15,14 +15,6 @@
         <span>Player</span>
         <v-icon>mdi-shoe-cleat</v-icon>
       </v-btn>
-      <v-btn>
-        <span>Book</span>
-        <v-icon>mdi-book</v-icon>
-      </v-btn>
-      <v-btn>
-        <span>Image</span>
-        <v-icon>mdi-image</v-icon>
-      </v-btn>
     </v-bottom-navigation> -->
     <div class="grey--text subtitle-2 ml-auto">
       &copy;2021,
