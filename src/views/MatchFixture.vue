@@ -1,6 +1,19 @@
 <template>
   <v-container fill-height>
     <v-row>
+      <v-progress-linear
+        color="primary darken-2"
+        absolute
+        :indeterminate="true"
+        v-if="loadingFilter"
+      ></v-progress-linear>
+      <alert-http
+        :xl="6"
+        :lg="12"
+        :sm="12"
+        v-if="httpError"
+        @retry="getMatchFixtures"
+      />
       <v-col v-if="loading">
         <v-skeleton-loader type="card@2"></v-skeleton-loader>
       </v-col>
@@ -16,6 +29,11 @@
           <v-chip value="upcoming">Upcoming</v-chip>
           <v-chip value="finish">Finish</v-chip>
         </v-chip-group>
+        <template v-if="filterMatch.length === 0">
+          <v-alert type="info" :value="true">
+            No {{ statusMatch }} Matches Found
+          </v-alert>
+        </template>
         <template v-for="data in filterMatch">
           <v-card class="mb-5" :key="data.id">
             <v-card-title>
@@ -192,9 +210,11 @@ import auth from "@/config/auth";
 export default {
   data() {
     return {
+      httpError: false,
       statusMatch: "running",
       bottonNav: 1,
       loading: false,
+      loadingFilter: false,
       fixtures: {
         result: [
           {
@@ -263,7 +283,7 @@ export default {
         ],
       },
       date: "",
-      utc: "+07",
+      utc: "+7",
       today: "",
     };
   },
@@ -335,6 +355,7 @@ export default {
       }
     },
     getMatchFixtures() {
+      this.httpError = false;
       this.loading = true;
       this.$http
         .get(config.baseUri.api + "/match/matchfixtures", {
@@ -349,6 +370,7 @@ export default {
         })
         .catch((error) => {
           console.log(error);
+          this.httpError = true;
         })
         .finally(() => {
           this.loading = false;

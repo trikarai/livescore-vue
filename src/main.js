@@ -9,6 +9,10 @@ import Axios from "axios";
 import VueLuxon from "vue-luxon";
 Vue.use(VueLuxon);
 
+// global component
+import AlertHttp from "@/components/AlertHttp";
+Vue.component("alert-http", AlertHttp);
+
 Vue.prototype.$http = Axios;
 Vue.config.productionTip = false;
 
