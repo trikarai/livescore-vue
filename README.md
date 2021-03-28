@@ -1,3 +1,10 @@
+<p align="center">
+  <a href="https://vuejs.org" target="_blank">
+    <img alt="Vuetify Logo" width="100" src="https://cli.vuejs.org/favicon.png">
+  </a>
+  Made with Vue
+</p>
+
 # livescore-vue
 
 Display Football Data such as match fixture, score, match detail from elevenscore REST API.
@@ -9,6 +16,7 @@ Display Football Data such as match fixture, score, match detail from elevenscor
 </div>
 
 ## Getting Started
+
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 1. Download and install [Vue-CLI](https://cli.vuejs.org/).
