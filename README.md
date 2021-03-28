@@ -3,9 +3,9 @@
 Display Football Data such as match fixture, score, match detail from elevenscore REST API.
 
 <div align="center">
-  <img src="screenshoot1.png">
-  <img src="screenshoot2.png">
-  <img src="screenshoot3.png">
+  <img width="200px" src="screenshoot1.png">
+  <img width="200px" src="screenshoot2.png">
+  <img width="200px" src="screenshoot3.png">
 </div>
 
 ## Getting Started
