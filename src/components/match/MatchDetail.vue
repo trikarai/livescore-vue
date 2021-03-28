@@ -11,9 +11,14 @@
             <v-col class="d-flex justify-center">
               <v-row>
                 <v-col>
-                  <v-img contain width="100" :src="match.home_team.logo" />
+                  <v-img
+                    class="mx-auto"
+                    contain
+                    width="100"
+                    :src="match.home_team.logo"
+                  />
                 </v-col>
-                <v-col>
+                <v-col lg="12" md="12" sm="12" class="text-center">
                   {{ match.home_team.name_en }}
                 </v-col>
               </v-row>
@@ -23,7 +28,7 @@
               <v-row>
                 <v-col>
                   <v-img
-                    style="float: right"
+                    class="mx-auto"
                     contain
                     lazy-src="/img/image-not-found.svg"
                     width="100"
@@ -31,7 +36,7 @@
                   >
                   </v-img>
                 </v-col>
-                <v-col>
+                <v-col lg="12" md="12" sm="12" class="text-center">
                   {{ match.away_team.name_en }}
                 </v-col>
               </v-row>

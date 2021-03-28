@@ -54,6 +54,7 @@
                 <v-row>
                   <v-col>
                     <v-img
+                      class="mx-auto"
                       contain
                       width="100"
                       :src="data.homeTeamEvent.logoUrl"
@@ -71,6 +72,7 @@
                 <v-row justify="center" align="center">
                   <v-col>
                     <v-img
+                      class="mx-auto"
                       contain
                       lazy-src="/img/image-not-found.svg"
                       width="100"
